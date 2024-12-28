@@ -7,6 +7,12 @@ from .models import StudentProfile, JobRole, JobRoleQuestion, JobRoleResponse
 from django.contrib.auth.decorators import login_required
 
 # View to list all available job roles for the student's stream
+def index(request):
+    return render(request,'index.html')
+
+
+
+'''
 @login_required
 def job_roles_list(request):
     student_profile = get_object_or_404(StudentProfile, user=request.user)
@@ -78,6 +84,6 @@ def recommend_job_roles(request):
         'student_profile': student_profile,
         'sorted_job_roles': sorted_job_roles,
     }
-    return render(request, 'career_guidance/recommend_job_roles.html', context)
+    return render(request, 'career_guidance/recommend_job_roles.html', context)'''
 
 
