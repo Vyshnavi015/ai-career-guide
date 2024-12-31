@@ -7,10 +7,11 @@ from .models import StudentProfile, JobRole, JobRoleQuestion, JobRoleResponse
 from django.contrib.auth.decorators import login_required
 
 # View to list all available job roles for the student's stream
-def index(request):
-    return render(request,'index.html')
+def inde(request):
+    return render(request,'inde.html')
 
-
+def tenth(request):
+    return render(request,'tenth.html')
 
 '''
 @login_required
