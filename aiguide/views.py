@@ -12,8 +12,8 @@ def index(request):
 
 '''
 # View to list all available job roles for the student's stream
-def inde(request):
-    return render(request,'inde.html')
+'''def inde(request):
+    return render(request,'inde.html')'''
 
 def tenth(request):
     return render(request,'tenth.html')
