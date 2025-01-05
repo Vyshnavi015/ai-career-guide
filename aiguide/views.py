@@ -1,11 +1,16 @@
 from django.shortcuts import render
-
+'''
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import StudentProfile, JobRole, JobRoleQuestion, JobRoleResponse
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required'''
 
+def index(request):
+    return render(request,'index.html')
+
+
+'''
 # View to list all available job roles for the student's stream
 @login_required
 def job_roles_list(request):
@@ -17,7 +22,6 @@ def job_roles_list(request):
     }
     return render(request, 'career_guidance/job_roles_list.html', context)
 
-
 # View to display questions for a specific job role
 @login_required
 def job_role_questions(request, job_role_id):
@@ -27,9 +31,9 @@ def job_role_questions(request, job_role_id):
         'job_role': job_role,
         'questions': questions,
     }
-    return render(request, 'career_guidance/job_role_questions.html', context)
+    return render(request, 'career_guidance/job_role_questions.html', context)'''
 
-
+'''
 # View to handle the submission of responses for a specific job role
 @login_required
 def submit_responses(request, job_role_id):
@@ -80,4 +84,4 @@ def recommend_job_roles(request):
     }
     return render(request, 'career_guidance/recommend_job_roles.html', context)
 
-
+'''
