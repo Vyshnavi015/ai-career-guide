@@ -5,15 +5,15 @@ from django.http import JsonResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import StudentProfile, JobRole, JobRoleQuestion, JobRoleResponse
 from django.contrib.auth.decorators import login_required'''
-
+'''
 def index(request):
     return render(request,'index.html')
-
-
 '''
+
+
 # View to list all available job roles for the student's stream
-'''def inde(request):
-    return render(request,'inde.html')'''
+def inde(request):
+    return render(request,'inde.html')
 
 def tenth(request):
     return render(request,'tenth.html')
@@ -91,4 +91,4 @@ def recommend_job_roles(request):
     }
     return render(request, 'career_guidance/recommend_job_roles.html', context)'''
 
-'''
+
