@@ -53,6 +53,20 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'careerguide.urls'
 
+# Redirect users after login
+LOGIN_REDIRECT_URL = '/'  # Redirect to the home page or any other page after successful login
+LOGOUT_REDIRECT_URL = '/login/'  # Redirect to the login page after logging out
+
+# Login URL for authentication decorators like @login_required
+LOGIN_URL = '/login/'
+
+
+
+
+
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -119,6 +133,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
