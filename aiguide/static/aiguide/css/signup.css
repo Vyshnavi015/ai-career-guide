@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .signup-container {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: calc(400px + 3cm); /* Expands the card width by 3 cm */
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .signup-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .signup-container p {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input, select, button {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Fix for the phone group layout */
+  .phone-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+  }
+  
+  .phone-group select {
+    flex: 0 0 70px; /* Sets fixed width for the country code dropdown */
+  }
+  
+  .phone-group input[type="tel"] {
+    flex: 1; /* Ensures the mobile number field adjusts within the remaining space */
+    min-width: 0; /* Prevents input field from exceeding layout */
+    width: 100%; /* Ensures it stretches only as needed */
+  }
+  

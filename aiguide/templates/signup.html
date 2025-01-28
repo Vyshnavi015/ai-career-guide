@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div class="signup-container">
+    <h1>Create Account</h1>
+   
+    <form class="signup-form">
+      <div class="form-group">
+        <input type="text" placeholder="Full Name*" required>
+        <input type="text" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email Address*" required>
+        <div class="phone-group">
+          <select>
+            
+            <option value="91">+91 (India)</option>
+            <option value="1">+1 (USA)</option>
+            <option value="44">+44 (UK)</option>
+            <option value="61">+61 (Australia)</option>
+            <option value="81">+81 (Japan)</option>
+            <option value="49">+49 (Germany)</option>
+            <option value="86">+86 (China)</option>
+            <option value="33">+33 (France)</option>
+            <option value="55">+55 (Brazil)</option>
+            <option value="7">+7 (Russia)</option>
+            <!-- Add more country codes here -->
+          </select>
+          <input type="tel" placeholder="Mobile Number*" required>
+        </div>
+      </div>
+      <input type="password" placeholder="Password*" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</body>
+</html>
