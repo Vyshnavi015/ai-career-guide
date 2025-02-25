@@ -7,17 +7,46 @@ from .models import StudentProfile, JobRole, JobRoleQuestion, JobRoleResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
 def inde(request):
-    return render(request,'inde.html')
+    return render(request,'index.html')
+
+'''def signup(request):
+    return render(request,'signup.html')'''
+
+
+def signup(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        mobile_number = request.POST.get('mobile_number')
+        password = request.POST.get('password')
+
+        # Check if the user already exists
+        if User.objects.filter(username=email).exists():
+            messages.error(request, "Email already registered!")
+            return render(request, 'signup.html')
+
+        # Create new user
+        user = User.objects.create_user(username=email, email=email, password=password, first_name=first_name, last_name=last_name)
+        user.save()
+        messages.success(request, "Account created successfully! Please log in.")
+        return redirect('login')  # Redirect to the Login page after sign-up
+
+    return render(request, 'signup.html')
+
 
 
 # Path to your custom login template
 class CustomLoginView(LoginView):
     template_name = 'login.html'  
-    '''
-
+    
+'''
 # View to list all available job roles for the student's stream
 @login_required
 def job_roles_list(request):
@@ -38,9 +67,9 @@ def job_role_questions(request, job_role_id):
         'job_role': job_role,
         'questions': questions,
     }
-    return render(request, 'career_guidance/job_role_questions.html', context)'''
+    return render(request, 'career_guidance/job_role_questions.html', context)
 
-'''
+
 # View to handle the submission of responses for a specific job role
 @login_required
 def submit_responses(request, job_role_id):
