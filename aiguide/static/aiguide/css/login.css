@@ -36,6 +36,7 @@ body {
 }
 
 /* Tab Switch */
+/* Tab Switch */
 .tab-switch {
     display: flex;
     justify-content: center;
@@ -46,12 +47,18 @@ body {
     flex: 1;
     padding: 10px 0;
     font-size: 1rem;
+    text-align: center;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     background: #f3f3f3;
     color: #555;
     transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.tab:hover {
+    background: #e6e6e6;
 }
 
 .tab.active {
@@ -59,6 +66,7 @@ body {
     color: #ffffff;
     font-weight: bold;
 }
+
 
 /* Form Inputs */
 .form-input {
